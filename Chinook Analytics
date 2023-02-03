@@ -1,0 +1,84 @@
+#
+
+#1.	Show Customers (their full names, customer ID, and country) who are not in the US. 
+SELECT firstname, lastname , customerid, country 
+FROM chinook.customers
+WHERE country != 'US';
+
+#2.	What is the name of the employee that was most recently hired?
+
+SELECT firstname, lastname, hiredate 
+FROM chinook.employees
+ORDER BY hiredate desc
+limit 1;
+
+ANSWER: Laura Callahan	2004-03-04 00:00:00
+
+#3. How many albums does Red Hot Chili Peppers have?
+SELECT Count (distinct alb.title), art.name
+FROM chinook.albums alb
+LEFT JOIN chinook.artists art
+ON alb.albumid = art.artistid
+WHERE art.name like 'Red%';
+
+ANSWER: 1
+
+#4.	How many employees report to Mitchell Michael?
+SELECT firstname, lastname, reportsto
+FROM chinook.employees;
+
+#5.	How many customers live in CA?
+SELECT sum(customerid) as totalcustomers
+FROM chinook.customers
+WHERE state = 'CA';
+
+#6.	What are the avg sales for 2009?
+SELECT avg(total)
+FROM chinook.invoices 
+WHERE invoicedate BETWEEN '2009-01-01' AND '2009-12-31';
+
+#7. Find a unique/distinct list of billing countries from the Invoice table.
+SELECT Distinct billingcountry
+FROM chinook.invoices;
+
+#8. Write a query that includes the purchased track name with each invoice line ID.
+SELECT t.name, t.unitprice, inv.invoicelineid 
+FROM chinook.tracks t
+JOIN chinook.invoice_items inv
+ON t.trackid = inv.trackid;
+
+#9. List all the artists that start with vowels.
+SELECT distinct name
+FROM chinook.artists
+WHERE (name LIKE "A%") 
+OR (name LIKE "E%")
+OR (name LIKE "I%")
+OR (name LIKE "O%")
+OR (name LIKE "U%");
+
+#10. Find the Invoices of customers who are from Brazil. The resulting table should show the customer's full name, Invoice ID, Date of the invoice, and billing country.
+SELECT cust.FirstName, cust.LastName, inv.InvoiceId, inv.BillingCountry, inv.InvoiceDate
+FROM chinook.invoices as inv 
+LEFT JOIN chinook.customers as cust 
+ON inv.CustomerId = cust.CustomerId 
+WHERE inv.BillingCountry = "Brazil";
+
+#11. Show the Employees who are Sales Agents.
+SELECT *
+FROM chinook.employees
+WHERE title = "Sales Support Agent";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
