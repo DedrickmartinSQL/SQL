@@ -18,16 +18,16 @@ LEFT JOIN chinook.artists art
 ON alb.albumid = art.artistid
 WHERE art.name like 'Red%';
 
-#4.	How many employees report to Mitchell Michael?
+#4. How many employees report to Mitchell Michael?
 SELECT firstname, lastname, reportsto
 FROM chinook.employees;
 
-#5.	How many customers live in CA?
+#5. How many customers live in CA?
 SELECT sum(customerid) as totalcustomers
 FROM chinook.customers
 WHERE state = 'CA';
 
-#6.	What are the avg sales for 2009?
+#6. What are the avg sales for 2009?
 SELECT avg(total)
 FROM chinook.invoices 
 WHERE invoicedate BETWEEN '2009-01-01' AND '2009-12-31';
