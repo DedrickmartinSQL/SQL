@@ -34,4 +34,5 @@ FROM BIT_DB.spotifydata
 ORDER BY popularity desc
 LIMIT 10
 
-#Then I found the avg tempo for the most popular songs.
+#Then I found the tempo for the most popular songs.
+
