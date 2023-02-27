@@ -1,11 +1,11 @@
 #In this SQL, I'm querying the Chinook database using multiple tables to explore statistics about customer and music data. 
 
-#1.	Show Customers (their full names, customer ID, and country) who are not in the US. 
+#1. Show Customers (their full names, customer ID, and country) who are not in the US. 
 SELECT firstname, lastname , customerid, country 
 FROM chinook.customers
 WHERE country != 'US';
 
-#2.	What is the name of the employee that was most recently hired?
+#2. What is the name of the employee that was most recently hired?
 SELECT firstname, lastname, hiredate 
 FROM chinook.employees
 ORDER BY hiredate desc
