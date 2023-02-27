@@ -1,4 +1,4 @@
-#
+#In this SQL, I'm querying the Chinook database using multiple tables to explore statistics about customer and music data. 
 
 #1.	Show Customers (their full names, customer ID, and country) who are not in the US. 
 SELECT firstname, lastname , customerid, country 
@@ -6,13 +6,10 @@ FROM chinook.customers
 WHERE country != 'US';
 
 #2.	What is the name of the employee that was most recently hired?
-
 SELECT firstname, lastname, hiredate 
 FROM chinook.employees
 ORDER BY hiredate desc
 limit 1;
-
-ANSWER: Laura Callahan	2004-03-04 00:00:00
 
 #3. How many albums does Red Hot Chili Peppers have?
 SELECT Count (distinct alb.title), art.name
@@ -20,8 +17,6 @@ FROM chinook.albums alb
 LEFT JOIN chinook.artists art
 ON alb.albumid = art.artistid
 WHERE art.name like 'Red%';
-
-ANSWER: 1
 
 #4.	How many employees report to Mitchell Michael?
 SELECT firstname, lastname, reportsto
@@ -42,7 +37,7 @@ SELECT Distinct billingcountry
 FROM chinook.invoices;
 
 #8. Write a query that includes the purchased track name with each invoice line ID.
-SELECT t.name, t.unitprice, inv.invoicelineid 
+SELECT distinct(t.name), t.unitprice, inv.invoicelineid 
 FROM chinook.tracks t
 JOIN chinook.invoice_items inv
 ON t.trackid = inv.trackid;
@@ -67,18 +62,3 @@ WHERE inv.BillingCountry = "Brazil";
 SELECT *
 FROM chinook.employees
 WHERE title = "Sales Support Agent";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
