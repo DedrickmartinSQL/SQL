@@ -13,6 +13,6 @@ of the prices of each daw and displayed the database ordered by daw).
 
 
 #Select daw, sum (price) 
-From musicstore 
+From Musicstore 
 Group By daw
 Order By daw desc;
