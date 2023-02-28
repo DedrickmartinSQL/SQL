@@ -34,5 +34,11 @@ FROM BIT_DB.spotifydata
 ORDER BY popularity desc
 LIMIT 10
 
-#Then I found the tempo for the most popular songs.
+#Then I found the max and min tempo for the songs.
+SELECT max(tempo) as max_tempo, min(tempo) as min_tempo
+FROM BIT_DB.spotifydata
 
+#Last I determined the avg popularity, danceability, and energy by artist and track. 
+SELECT artist_name, track_name, avg(popularity), avg(danceability), avg(energy)
+FROM BIT_DB.spotifydata
+GROUP BY artist_name, track_name
