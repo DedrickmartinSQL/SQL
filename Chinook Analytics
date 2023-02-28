@@ -62,3 +62,4 @@ WHERE inv.BillingCountry = "Brazil";
 SELECT *
 FROM chinook.employees
 WHERE title = "Sales Support Agent";
+
