@@ -1,17 +1,18 @@
-Check out my music store database here. Notice how I've described each piece of code (first I created a music store database, then took the sum
+#Check out my music store database here. Notice how I've described each piece of code (first I created a music store database, then took the sum
 of the prices of each daw and displayed the database ordered by daw).
 
 
-Create table Musicstore (id integer primary key, name text, daw text, price integer, amount_sold integer);
+#Create table Musicstore (id integer primary key, name text, daw text, price integer, amount_sold integer);
 
-Insert into Musicstore Values 
+#Insert into Musicstore Values 
 (1, 'autotune', 'pro tools', 200, 4),
 (2, 'wavestune', 'logic', 100, 3),
 (3, 'omnisphere', 'pro tools', 500, 54),
 (4, 'alchemy', 'logic', 10, 300),
 (5, 'sineman', 'fl studio', 30, 45);
 
-Select daw, sum (price) 
+
+#Select daw, sum (price) 
 From musicstore 
 Group By daw
 Order By daw desc;
