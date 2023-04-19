@@ -27,7 +27,7 @@ LEFT JOIN store on inventory.store_id = store.store_id
 LEFT JOIN film on film.film_id = inventory.film_id;
 
 
-#3	From the same list of films you just pulled, please roll that data up and provide a summary level overview 
+#3 From the same list of films you just pulled, please roll that data up and provide a summary level overview 
 of your inventory. We would like to know how many inventory items you have with each rating at each store. 
 
 
