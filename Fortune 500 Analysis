@@ -106,6 +106,18 @@ Where industry = 'Technology'
 Order BY employees ASC
 Limit 1;
 
+# Categorize companies in the "Technology" industry as "Highly Staffed,", "Moderately Staffed," or "Low Staffed" based on their number of 
+employees, using a case statement.
+
+
+Select industry, company_name,
+Case when employees >= 100000 then 'Highly Staffed'
+When employees >= 2700 then 'Moderately Staffed'
+Else 'Low Staffed' 
+End as 'Employee_Staffing'
+From fortune_companies
+Where industry = 'Technology'
+
 # Which company in the 'Finance' industry has the highest revenue?
 
 Select company_name, max(revenue) as highest_revenue
